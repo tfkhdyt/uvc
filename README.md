@@ -5,7 +5,7 @@ Dengan codec x265, dapat membuat size videomu berkurang sampai ±90% tanpa berku
 ## Instalasi
 ```Shell
 # cloning source code
-git clone https://github.com/tfkhdyt/x265
+git clone https://github.com/tfkhdyt/x265.git
 
 # buka folder x265
 cd x265
