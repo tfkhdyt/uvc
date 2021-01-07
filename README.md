@@ -11,7 +11,7 @@ git clone https://github.com/tfkhdyt/x265
 cd x265
 
 # jalankan installer
-sh install.sh
+./install.sh
 
 # ketikkan alias untuk memulai script
 x265
