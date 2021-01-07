@@ -10,6 +10,10 @@ Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menuli
 
 ## Instalasi
 ```Shell
+# mengizinkan termux mengakses storage
+termux-setup-storage
+# kemudian pilih y
+
 # cloning source code
 git clone https://github.com/tfkhdyt/x265.git
 
