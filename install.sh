@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-pkg install ffmpeg toilet -y
+pkg install ffmpeg toilet ruby -y
 gem install lolcat
 echo "alias x265='cd ~/x265 && sh x265.sh'" >> ~/.zshrc
 echo "alias x265='cd ~/x265 && sh x265.sh'" >> ~/../usr/etc/bash.bashrc
