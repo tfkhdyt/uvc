@@ -1,6 +1,0 @@
-<<<<<<< HEAD
-anjay mabar 
-=======
-anjay mabar
-yahahah hayuk
->>>>>>> parent of 1e8176d (menghapus file test.txt)
