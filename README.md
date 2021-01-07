@@ -6,7 +6,7 @@ Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menuli
 ## Requirements
 - `Termux`
 - `git (pkg install git)`
-- `Koneksi internet (Untuk instalasi git dan ffmpeg, proses convert tetap dilalukan secara offline)`
+- `Koneksi internet (Hanya untuk instalasi git dan ffmpeg, proses convert tetap dilakukan secara offline)`
 
 ## Instalasi
 ```Shell
