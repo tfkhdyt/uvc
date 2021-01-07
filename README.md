@@ -48,4 +48,4 @@ $SHELL
 
 ## Informasi lebih lanjut
 Apabila ada yang mau ditanyakan soal skrip ini, bisa langsung pm ke saya lewat:
-<a href="https://linktr.ee/tfkhdyt" target=_blank>Contact me!</a>
+<a href="https://linktr.ee/tfkhdyt" target="_blank">Contact me!</a>
