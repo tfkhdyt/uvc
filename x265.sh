@@ -1,3 +1,4 @@
+#!/bin/bash
 # developed by tfkhdyt
 proses(){
 clear
