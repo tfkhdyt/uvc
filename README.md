@@ -6,7 +6,7 @@ Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menuli
 ## Requirements
 - `Termux`
 - `git (pkg install git)`
-- `Koneksi internet (Hanya untuk instalasi git dan ffmpeg, proses convert tetap dilakukan secara offline)`
+- `Koneksi internet (Hanya untuk instalasi dependencies, proses convert tetap dilakukan secara offline)`
 
 ## Instalasi
 ```Shell
@@ -19,9 +19,9 @@ cd x265
 # jalankan installer
 ./install.sh
 
-# ketikkan alias untuk memulai script
+# mulai script dengan mengetik command berikut
 x265
 ```
 
 ## Screenshot
-<img src="https://i.postimg.cc/rmsCs9Jx/Screenshot-2021-01-06-22-19-12-32-84d3000e3f4017145260f7618db1d683.jpg" height="100"> <img src="https://i.postimg.cc/9QHpbZmH/Screenshot-2021-01-06-22-20-42-18-84d3000e3f4017145260f7618db1d683.jpg" height="100"> <img src="https://i.postimg.cc/CKF4T0nv/Screenshot-2021-01-06-22-21-10-11-84d3000e3f4017145260f7618db1d683.jpg" height="100"> <img src="https://i.postimg.cc/4d0v9hLM/Screenshot-2021-01-06-22-22-11-29-84d3000e3f4017145260f7618db1d683.jpg" height="100"> <img src="https://i.postimg.cc/Jz3Q200D/Screenshot-2021-01-06-22-22-18-95-84d3000e3f4017145260f7618db1d683.jpg" height="100"> <img src="https://i.postimg.cc/KjgPrvCY/Screenshot-2021-01-06-22-22-34-78-84d3000e3f4017145260f7618db1d683.jpg" height="100">
+<img src="https://i.postimg.cc/pmxLxh6r/Screenshot-2021-01-07-16-57-50-01-84d3000e3f4017145260f7618db1d683.jpg" alt="Screenshot-2021-01-07-16-57-50-01-84d3000e3f4017145260f7618db1d683"/> <img src="https://i.postimg.cc/kVYJxjXR/Screenshot-2021-01-07-16-58-17-11-84d3000e3f4017145260f7618db1d683.jpg" alt="Screenshot-2021-01-07-16-58-17-11-84d3000e3f4017145260f7618db1d683"/> <img src="https://i.postimg.cc/WFD2SMhW/Screenshot-2021-01-07-16-58-54-60-84d3000e3f4017145260f7618db1d683.jpg" alt="Screenshot-2021-01-07-16-58-54-60-84d3000e3f4017145260f7618db1d683"/> <img src="https://i.postimg.cc/sMcD2jkc/Screenshot-2021-01-07-16-59-00-00-84d3000e3f4017145260f7618db1d683.jpg" alt="Screenshot-2021-01-07-16-59-00-00-84d3000e3f4017145260f7618db1d683"/>
