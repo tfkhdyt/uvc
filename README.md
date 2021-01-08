@@ -47,9 +47,18 @@ $SHELL
 ```
 
 ## Update
-1. Uninstall
-2. Install Ulang
-:"v
+##### Cara baru
+`update-x265`
+
+##### Cara lama
+```Shell
+cd ~                                                              sed -i '/x265/d' .zshrc
+sed -i '/x265/d' ../usr/etc/bash.bashrc                           rm -rf x265/
+cd ~
+git clone https://github.com/tfkhdyt/x265.git
+cd ~/x265
+./install.sh
+```
 
 ## Screenshot
 <img src=https://i.postimg.cc/xCFmvVwf/Screenshot-2021-01-08-10-06-32-17-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/XqRyPcNt/Screenshot-2021-01-08-10-06-54-45-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/yYRRZ5vK/Screenshot-2021-01-08-10-07-15-03-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/wxZJ3H5F/Screenshot-2021-01-08-10-07-31-91-84d3000e3f4017145260f7618db1d683.jpg height=100/> 
