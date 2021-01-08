@@ -1,10 +1,10 @@
 #!/bin/bash
 
 cd ~
-sed -i '/x265/d' .zshrc
-sed -i '/x265/d' ../usr/etc/bash.bashrc
-rm -rf x265/
+sed -i '/uvc/d' .zshrc
+sed -i '/uvc/d' ../usr/etc/bash.bashrc
+rm -rf uvc/
 cd ~
-git clone https://github.com/tfkhdyt/x265.git
-cd ~/x265
+git clone https://github.com/tfkhdyt/uvc.git
+cd ~/uvc
 ./install.sh

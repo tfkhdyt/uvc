@@ -1,7 +1,7 @@
 #!/bin/bash
 # developed by tfkhdyt
 logo(){
-  toilet -f small -F border "FFMPEG  x265" | lolcat
+  toilet -f slant -F border "UVC" | lolcat
 }
 proses(){
 clear
@@ -40,9 +40,9 @@ case $pilihan in
       read exp2
       if [ "$exp2" = "y" ]; then
         clear
-        ffmpeg -i "$namaFileInput" -c:v libx265 -crf 25 -c:a copy "$namaFileOutput"
+        ffmpeg -i "$namaFileInput" -crf 29 -preset superfast -c:a copy "$namaFileOutput"
       elif [ "$exp2" = "n" ]; then
-        cd ~/x265
+        cd ~/uvc
         clear
         unset pilihan
         unset exp
@@ -52,7 +52,7 @@ case $pilihan in
         unset namaFolder
         menu
       else
-       cd ~/x265
+       cd ~/uvc
        clear
        unset pilihan
         unset exp
@@ -63,7 +63,7 @@ case $pilihan in
        menu
       fi
      elif [ $exp -eq 3 ]; then
-       cd ~/x265
+       cd ~/uvc
        clear
        unset pilihan
         unset exp
@@ -80,7 +80,7 @@ case $pilihan in
     ;;
   2)
     clear
-    cd ~/x265
+    cd ~/uvc
     unset pilihan
     unset exp
     unset exp2
@@ -91,7 +91,7 @@ case $pilihan in
     exit
     ;;
   *)
-    cd ~/x265
+    cd ~/uvc
     clear
     echo "Input tidak valid!"
     menu
