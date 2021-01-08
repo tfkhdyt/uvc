@@ -1,7 +1,9 @@
-# x265-converter-termux
+# Ultra Video Converter
 Skrip untuk mengonversi video ke codec x265 dengan mudah menggunakan Termux.
-Dengan codec x265, dapat membuat size videomu berkurang sampai ±90% tanpa mengurangi kualitas video.
+Dengan codec x265, dapat membuat size videomu berkurang sampai ±50% tanpa mengurangi kualitas video.
 Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis command yang panjang.
+### Peringatan
+Saya tidak menjamin video yang kalian convert ukurannya akan menjadi lebih kecil, karena hasil akhir akan sangat berpengaruh dari video asli. Jadi jangan heran jika suatu saat size hasil convert malah lebih besar dari size video asli 
 <center>
 <img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/>
 </center>
@@ -18,47 +20,47 @@ termux-setup-storage
 # kemudian pilih y
 
 # cloning source code
-git clone https://github.com/tfkhdyt/x265.git
+git clone https://github.com/tfkhdyt/uvc.git
 
-# buka folder x265
-cd x265
+# buka folder uvc
+cd uvc
 
 # jalankan installer
 ./install.sh
 
 # mulai script dengan mengetik command berikut
-x265
+uvc
 
 # cara force stop proses convert yaitu dengan tekan tombol ctrl + c
 ```
 
 ## Uninstall
-##### Cara baru (x265 2.0)
+##### Cara baru
 `
-uninstall-x265
+uninstall-uvc
 `
-##### Cara lama (x265 1.0)
+##### Cara lama
 ```Shell
 cd ~
-sed -i '/x265/d' .zshrc
-sed -i '/x265/d' ../usr/etc/bash.bashrc
-rm -rf x265/
+sed -i '/uvc/d' .zshrc
+sed -i '/uvc/d' ../usr/etc/bash.bashrc
+rm -rf uvc/
 $SHELL
 ```
 
 ## Update
-##### Cara baru (x265 2.6.2 dan seterusnya)
-`update-x265`
+##### Cara baru
+`update-uvc`
 
-##### Cara lama (x265 2.4.4 dan sebelumnya)
+##### Cara lama
 ```Shell
 cd ~
-sed -i '/x265/d' .zshrc
-sed -i '/x265/d' ../usr/etc/bash.bashrc
-rm -rf x265/
+sed -i '/uvc/d' .zshrc
+sed -i '/uvc/d' ../usr/etc/bash.bashrc
+rm -rf uvc/
 cd ~
-git clone https://github.com/tfkhdyt/x265.git
-cd ~/x265
+git clone https://github.com/tfkhdyt/uvc.git
+cd ~/uvc
 ./install.sh
 ```
 
