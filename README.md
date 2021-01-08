@@ -5,6 +5,7 @@ Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menuli
 <center>
 <img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/>
 </center>
+
 ## Requirements
 - `Termux`
 - `git (pkg install git)`
