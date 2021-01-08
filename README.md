@@ -2,7 +2,9 @@
 Skrip untuk mengonversi video ke codec x265 dengan mudah dengan Termux.
 Dengan codec x265, dapat membuat size videomu berkurang sampai ±90% tanpa mengurangi kualitas video.
 Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis command yang panjang.
-
+<center>
+<img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/>
+</center>
 ## Requirements
 - `Termux`
 - `git (pkg install git)`
