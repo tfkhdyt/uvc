@@ -58,4 +58,4 @@ $SHELL
 
 ## Informasi lebih lanjut
 Apabila ada yang mau ditanyakan soal skrip ini, bisa langsung pm ke saya lewat:
-<a href="https://linktr.ee/tfkhdyt" target="_blank"><img src=https://img.shields.io/badge/Contact-me-green?style=flat-square/></a>
+<a href="https://linktr.ee/tfkhdyt" target="_blank"><img src="https://img.shields.io/badge/Contact-me-green?style=flat-square"/></a>
