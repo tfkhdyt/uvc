@@ -40,7 +40,7 @@ case $pilihan in
       read exp2
       if [ "$exp2" = "y" ]; then
         clear
-        ffmpeg -i "$namaFileInput" -crf 29 -preset superfast -c:a copy "$namaFileOutput"
+        ffmpeg -i "$namaFileInput" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
       elif [ "$exp2" = "n" ]; then
         cd ~/uvc
         clear
