@@ -25,6 +25,8 @@ cd x265
 
 # mulai script dengan mengetik command berikut
 x265
+
+# cara force stop proses convert yaitu dengan tekan tombol ctrl + c
 ```
 
 ## Uninstall
