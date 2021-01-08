@@ -57,5 +57,4 @@ $SHELL
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/HnCF789w/Screenshot-2021-01-04-20-01-29-24-db51e592e420a9871f4a37915a68789b.jpg' border='0' alt='Screenshot-2021-01-04-20-01-29-24-db51e592e420a9871f4a37915a68789b'/></a>
 
 ## Informasi lebih lanjut
-Apabila ada yang mau ditanyakan soal skrip ini, bisa langsung pm ke saya lewat:
-<a href="https://linktr.ee/tfkhdyt" target="_blank"><img src="https://img.shields.io/badge/Contact-me-green?style=flat-square"/></a>
+Apabila ada yang mau ditanyakan soal skrip ini, bisa langsung pm saya: <a href="https://linktr.ee/tfkhdyt" target="_blank"><img src="https://img.shields.io/badge/Contact-me-green?style=flat-square"/></a>
