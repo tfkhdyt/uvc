@@ -29,10 +29,9 @@ x265
 
 ## Uninstall
 ##### Cara baru (x265 2.0)
-```Shell
-cd ~/x265
-./uninstall.sh
-```
+`
+uninstall-x265
+`
 ##### Cara lama (x265 1.0)
 ```Shell
 cd ~
