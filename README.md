@@ -47,7 +47,7 @@ $SHELL
 ```
 
 ## Update
-##### Cara baru (x265 2.6.4 dan seterusnya)
+##### Cara baru (x265 2.6.2 dan seterusnya)
 `update-x265`
 
 ##### Cara lama (x265 2.4.4 dan sebelumnya)
