@@ -47,10 +47,10 @@ $SHELL
 ```
 
 ## Update
-##### Cara baru
+##### Cara baru (x265 2.6.4 dan seterusnya)
 `update-x265`
 
-##### Cara lama
+##### Cara lama (x265 2.4.4 dan sebelumnya)
 ```Shell
 cd ~
 sed -i '/x265/d' .zshrc
