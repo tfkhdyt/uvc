@@ -2,11 +2,12 @@
 Skrip untuk mengonversi video ke codec x265 dengan mudah menggunakan Termux.
 Dengan codec x265, dapat membuat size videomu berkurang sampai ±50% tanpa mengurangi kualitas video.
 Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis command yang panjang.
+<p align=center>
+<img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/>
+</p>
+
 ### Peringatan
 Saya tidak menjamin video yang kalian convert ukurannya akan menjadi lebih kecil, karena hasil akhir akan sangat berpengaruh dari video asli. Jadi jangan heran jika suatu saat size hasil convert malah lebih besar dari size video asli 
-<center>
-<img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/>
-</center>
 
 ## Requirements
 - `Termux`
@@ -70,4 +71,7 @@ cd ~/uvc
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/HnCF789w/Screenshot-2021-01-04-20-01-29-24-db51e592e420a9871f4a37915a68789b.jpg' border='0' alt='Screenshot-2021-01-04-20-01-29-24-db51e592e420a9871f4a37915a68789b'/></a>
 
 ## Informasi lebih lanjut
-Apabila ada yang mau ditanyakan soal skrip ini, bisa langsung pm saya: <a href="https://linktr.ee/tfkhdyt" target="_blank"><img src="https://img.shields.io/badge/Contact-me-green?style=flat-square"/></a>
+Apabila ada yang mau ditanyakan soal skrip ini, bisa langsung pm saya:
+<p align=center>
+<a href="https://linktr.ee/tfkhdyt" target="_blank"><img src="https://img.shields.io/badge/Contact-me-green?style=for-the-badge"/></a>
+</p>
