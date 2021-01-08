@@ -65,7 +65,7 @@ cd ~/uvc
 ```
 
 ## Screenshot
-<img src=https://i.postimg.cc/xCFmvVwf/Screenshot-2021-01-08-10-06-32-17-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/XqRyPcNt/Screenshot-2021-01-08-10-06-54-45-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/yYRRZ5vK/Screenshot-2021-01-08-10-07-15-03-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/wxZJ3H5F/Screenshot-2021-01-08-10-07-31-91-84d3000e3f4017145260f7618db1d683.jpg height=100/> 
+<img src=https://i.postimg.cc/4dmyt75S/Screenshot-2021-01-08-21-41-31-55-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/XqRyPcNt/Screenshot-2021-01-08-10-06-54-45-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/yYRRZ5vK/Screenshot-2021-01-08-10-07-15-03-84d3000e3f4017145260f7618db1d683.jpg height=100/> <img src=https://i.postimg.cc/wxZJ3H5F/Screenshot-2021-01-08-10-07-31-91-84d3000e3f4017145260f7618db1d683.jpg height=100/> 
 ##### Hasil
 <a href='https://postimages.org/' target='_blank'><img src='https://i.postimg.cc/HnCF789w/Screenshot-2021-01-04-20-01-29-24-db51e592e420a9871f4a37915a68789b.jpg' border='0' alt='Screenshot-2021-01-04-20-01-29-24-db51e592e420a9871f4a37915a68789b'/></a>
 
