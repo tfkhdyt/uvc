@@ -10,7 +10,7 @@ case $pilihan in
   cd ../storage/shared
   while [ -z "$namaFileInput" ]; do
    toilet -f small -F border "Pilih video" | lolcat
-   ls
+   tree -L 1
    echo "\n    [1] = Buka folder"
    echo "    [2] = Pilih file"
    echo "    [3] = Kembali ke menu utama\n"
