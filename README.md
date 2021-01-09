@@ -1,7 +1,7 @@
 # Ultra Video Converter
 Skrip untuk mengonversi video ke codec x265 dengan mudah menggunakan Termux.
 Dengan codec x265, dapat membuat size videomu berkurang sampai ±50% tanpa mengurangi kualitas video.
-Script ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis command yang panjang.
+Skrip ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis command yang panjang.
 <p align=center>
 <img src="https://img.shields.io/badge/Created%20by-tfkhdyt-blue?style=for-the-badge&logo=github"/><br>
 <a href="Https://facebook.com/tfkhdyt142"><img height="30" src="https://www.pinclipart.com/picdir/big/2-21918_download-transparent-background-facebook-logo-clipart-facebook-logo.png"></a>&nbsp;
