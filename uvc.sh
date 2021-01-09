@@ -40,6 +40,9 @@ case $pilihan in
       read exp2
       if [ "$exp2" = "y" ]; then
         clear
+        echo "Proses convert akan segera dimulai..."
+	echo "Tekan ctrl + c untuk membatalkan proses convert"
+	sleep 3
         ffmpeg -i "$namaFileInput" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
       elif [ "$exp2" = "n" ]; then
         cd ~/uvc
