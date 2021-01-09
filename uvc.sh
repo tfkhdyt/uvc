@@ -1,7 +1,7 @@
 #!/bin/bash
 # developed by tfkhdyt
 logo(){
-  toilet -f slant -F border "UVC" | lolcat
+	toilet -f smslant -F border -w 48 "Ultra Video Converter" | lolcat
 }
 proses(){
 clear
