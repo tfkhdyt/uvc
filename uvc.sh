@@ -51,7 +51,7 @@ proses(){
                 echo "Proses convert akan segera dimulai..."
                 echo "Tekan ctrl + c untuk membatalkan proses convert"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 25 -preset ultrafast -c:a copy "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
                 cd ~
                 unset pilihan
                 unset exp
@@ -96,7 +96,7 @@ proses(){
                     echo "Proses convert akan segera dimulai..."
                     echo "Tekan ctrl + c untuk membatalkan proses convert"
                     sleep 3
-                    ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 25 -preset ultrafast -c:a copy "$namaFileOutput"
+                    ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
                     cd ~
                     unset pilihan
                     unset exp
