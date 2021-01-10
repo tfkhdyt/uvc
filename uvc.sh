@@ -9,7 +9,8 @@ case $pilihan in
   1)
   cd ../storage/shared
   while [ -z "$namaFileInput" ]; do
-   toilet -f small -F border "Pilih video" | lolcat
+   browse(){
+   toilet -f smslant -F border "Pilih video" | lolcat
    pwd -P
    tree -L 1
    echo "\n    [1] = Buka folder"
@@ -26,51 +27,113 @@ case $pilihan in
       clear
     elif [ $exp -eq 2 ]; then
       echo "\n  * Tanpa tanda petik"
-      printf "  Nama file: "
+      printf "  Nama file          : "
       read namaFileInput
-      printf "  Simpan dengan nama: "
+      printf "  Simpan dengan nama : "
       read namaFileOutput
       clear
-      toilet -f small -F border "Konfirmasi" | lolcat
+      konfirmasi(){
+      toilet -f smslant -F border "Konfirmasi" | lolcat
       ptInput="$namaFileInput"
       ptOutput="$namaFileOutput"
-      echo "  Input : $ptInput"
-      echo "  Output: $ptOutput\n"
-      printf "  Mulai convert?(y/n): "
+      durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
+      echo "  Input  : $ptInput"
+      echo "  Output : $ptOutput"
+      echo "  Durasi : $durasi\n"
+      echo "  Apakah anda ingin memotong/trim videonya?"
+      echo "    [1] Iya, trim video terlebih dahulu"
+      echo "    [2] Tidak, langsung convert saja"
+      echo "    [3] Batal"
+      printf "\n  Pilih : "
       read exp2
-      if [ "$exp2" = "y" ]; then
+      if [ $exp2 -eq 2 ]; then
         clear
         echo "Proses convert akan segera dimulai..."
 	echo "Tekan ctrl + c untuk membatalkan proses convert"
 	sleep 3
         ffmpeg -i "$namaFileInput" -c:v libx265 -crf 25 -preset ultrafast -c:a copy "$namaFileOutput"
-      elif [ "$exp2" = "n" ]; then
-        cd ~/uvc
+cd ~
+    unset pilihan
+    unset exp
+    unset exp2
+    unset exp3
+    unset waktuMulai
+        unset waktuSelesai
+    unset namaFileInput
+    unset namaFileOutput
+    unset namaFolder
+    clear
+    echo "Proses convert telah selesai"
+    exit
+      elif [ $exp2 -eq 3 ]; then
         clear
-        unset pilihan
         unset exp
         unset exp2
         unset namaFileInput
         unset namaFileOutput
         unset namaFolder
-        menu
-      else
-       cd ~/uvc
+        browse
+      elif [ $exp2 -eq 1 ]; then
+        clear
+        trim(){
+        toilet -f smslant -F border "Trim" | lolcat
+        ptInput="$namaFileInput"
+        ptOutput="$namaFileOutput"
+      # durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
+        echo "  Input  : $ptInput"
+        echo "  Output : $ptOutput"
+        echo "  Durasi : $durasi\n"
+        echo "  Isi dengan format 'jam:menit:detik'"
+        echo "  Contoh : 00:01:25\n"
+        printf "  Waktu mulai video   : "
+        read waktuMulai
+        printf "  Waktu selesai video : "
+        read waktuSelesai
+        printf "\n  Mulai convert? (y/n) : "
+        read exp3
+        if [ "$exp3" = "y" ]; then
+          clear
+          echo "Proses convert akan segera dimulai..."
+          echo "Tekan ctrl + c untuk membatalkan proses convert"
+          sleep 3
+          ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 25 -preset ultrafast -c:a copy "$namaFileOutput"
+          cd ~
+    unset pilihan
+    unset exp
+    unset exp2
+    unset exp3
+    unset waktuMulai
+        unset waktuSelesai
+    unset namaFileInput
+    unset namaFileOutput
+    unset namaFolder
+    clear
+    echo "Proses convert telah selesai"
+    exit 
+      elif [ "$exp3" = "n" ]; then
+         clear
+         konfirmasi
+         echo "Input tidak valid"
+        trim
+       fi
+       }
+       trim
+       else
        clear
-       unset pilihan
-        unset exp
-        unset exp2
-        unset namaFileInput
-        unset namaFileOutput
-        unset namaFolder
-       menu
+         echo "Input tidak valid"
+       konfirmasi
       fi
+      }
+      konfirmasi
      elif [ $exp -eq 3 ]; then
        cd ~/uvc
        clear
        unset pilihan
         unset exp
         unset exp2
+        unset exp3
+	unset waktuMulai
+        unset waktuSelesai
         unset namaFileInput
         unset namaFileOutput
         unset namaFolder
@@ -79,6 +142,8 @@ case $pilihan in
         clear
         echo "Input tidak valid"
     fi
+  }
+  browse
   done
     ;;
   2)
@@ -87,6 +152,9 @@ case $pilihan in
     unset pilihan
     unset exp
     unset exp2
+    unset exp3
+    unset waktuMulai
+        unset waktuSelesai
     unset namaFileInput
     unset namaFileOutput
     unset namaFolder
