@@ -1,5 +1,23 @@
 #!/bin/bash
 # developed by tfkhdyt
+size(){
+  sizeInput=$(ffprobe -i "$namaFileInput" -show_entries format=size -v quiet -of csv="p=0")
+  sizeInputMB="scale=2; $sizeInput / 1048576"
+  sizeInputFinal=$(echo $sizeInputMB | bc -l)
+  sizeInputLast=$(echo "$sizeInputFinal MB")
+
+  sizeOutput=$(ffprobe -i "$namaFileOutput" -show_entries format=size -v quiet -of csv="p=0")
+  sizeOutputMB="scale=2; $sizeOutput / 1048576"
+  sizeOutputFinal=$(echo $sizeOutputMB | bc -l)
+  sizeOutputLast=$(echo "$sizeOutputFinal MB")
+
+  persentase="scale=1; 100-${sizeOutputFinal}/${sizeInputFinal}*100"
+  echo "[Original]   = $sizeInputLast"
+  echo "[Compressed] = $sizeOutputLast"
+  persentase2=$(echo $persentase | bc -l)
+  echo "Video Anda telah berkurang ${persentase2}%"
+}
+
 logo(){
   toilet -f smslant -F border -w 48 "Ultra Video Converter" | lolcat
 }
@@ -51,7 +69,10 @@ proses(){
                 echo "Proses convert akan segera dimulai..."
                 echo "Tekan q untuk membatalkan proses convert"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 21 -preset ultrafast -c:a copy "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 27 -preset faster -c:a copy "$namaFileOutput"
+                clear
+                echo "Proses convert telah selesai"
+                size
                 cd ~
                 unset pilihan
                 unset exp
@@ -62,7 +83,6 @@ proses(){
                 unset namaFileInput
                 unset namaFileOutput
                 unset namaFolder
-                echo "Proses convert telah selesai"
                 exit
               elif [ $exp2 -eq 3 ]; then
                 clear
@@ -99,10 +119,13 @@ proses(){
                     echo "Proses convert akan segera dimulai..."
                     echo "Tekan q untuk membatalkan proses convert"
                     sleep 3
-                    # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
-                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 21 -preset ultrafast -c:a copy "$namaFileOutput"
-                    # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
+                    # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset faster -c:a copy "$namaFileOutput"
+                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 27 -preset faster -c:a copy "$namaFileOutput"
+                    # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset faster -c:a copy "$namaFileOutput"
                     # rm temp.mp4
+                    clear
+                    echo "Proses convert telah selesai"
+                    size
                     cd ~
                     unset pilihan
                     unset exp
@@ -113,7 +136,6 @@ proses(){
                     unset namaFileInput
                     unset namaFileOutput
                     unset namaFolder
-                    echo "Proses convert telah selesai"
                     exit 
                   elif [ "$exp3" = "n" ]; then
                     clear
