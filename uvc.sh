@@ -51,7 +51,7 @@ proses(){
                 echo "Proses convert akan segera dimulai..."
                 echo "Tekan q untuk membatalkan proses convert"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 21 -preset ultrafast -c:a copy "$namaFileOutput"
                 cd ~
                 unset pilihan
                 unset exp
@@ -87,7 +87,7 @@ proses(){
                   printf "  Waktu mulai video   : "
                   read waktuMulai
                   waktuMulaiSec=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
-                  waktuMulaiSec2=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 - 5 }')
+                  waktuMulaiSec2=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 - 1 }')
                   printf "  Waktu selesai video : "
                   read waktuSelesai
                   waktuSelesaiSec=$(echo $waktuSelesai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
@@ -100,7 +100,7 @@ proses(){
                     echo "Tekan q untuk membatalkan proses convert"
                     sleep 3
                     # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
-                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 5 -t $akhir -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
+                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 21 -preset ultrafast -c:a copy "$namaFileOutput"
                     # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset ultrafast -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     cd ~
