@@ -27,7 +27,7 @@ proses(){
         browse(){
           toilet -f smslant -F border "Pilih video" | lolcat
           pwd -P
-          tree -L 1
+          tree -L 1 -h
           echo "\n    [1] = Buka folder"
           echo "    [2] = Pilih file"
           echo "    [3] = Kembali ke menu utama\n"
