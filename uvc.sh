@@ -57,7 +57,12 @@ proses(){
               durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
               echo "  Input  : $ptInput"
               echo "  Output : $ptOutput"
-              echo "  Durasi : $durasi\n"
+              echo "  Durasi : $durasi"
+              sizeInput=$(ffprobe -i "$namaFileInput" -show_entries format=size -v quiet -of csv="p=0")
+              sizeInputMB="scale=2; $sizeInput / 1048576"
+              sizeInputFinal=$(echo $sizeInputMB | bc -l) 
+              sizeInputLast=$(echo "$sizeInputFinal MB")
+              echo "  Ukuran : ${sizeInputLast}\n"
               echo "  Apakah anda ingin memotong/trim videonya?"
               echo "    [1] Iya, trim video terlebih dahulu"
               echo "    [2] Tidak, langsung convert saja"
@@ -74,23 +79,12 @@ proses(){
                 echo "Proses convert telah selesai"
                 size
                 cd ~
-                unset pilihan
-                unset exp
-                unset exp2
-                unset exp3
-                unset waktuMulai
-                unset waktuSelesai
-                unset namaFileInput
-                unset namaFileOutput
-                unset namaFolder
+                unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
+                
                 exit
               elif [ $exp2 -eq 3 ]; then
                 clear
-                unset exp
-                unset exp2
-                unset namaFileInput
-                unset namaFileOutput
-                unset namaFolder
+                unset exp exp2 namaFileInput namaFileOutput namaFolder
                 browse
               elif [ $exp2 -eq 1 ]; then
                 clear
@@ -127,15 +121,7 @@ proses(){
                     echo "Proses convert telah selesai"
                     size
                     cd ~
-                    unset pilihan
-                    unset exp
-                    unset exp2
-                    unset exp3
-                    unset waktuMulai
-                    unset waktuSelesai
-                    unset namaFileInput
-                    unset namaFileOutput
-                    unset namaFolder
+                    unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
                     exit 
                   elif [ "$exp3" = "n" ]; then
                     clear
@@ -155,15 +141,7 @@ proses(){
         elif [ $exp -eq 3 ]; then
           cd ~/uvc
           clear
-          unset pilihan
-          unset exp
-          unset exp2
-          unset exp3
-          unset waktuMulai
-          unset waktuSelesai
-          unset namaFileInput
-          unset namaFileOutput
-          unset namaFolder
+          unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
           menu
         else
           clear
@@ -176,16 +154,8 @@ proses(){
   2)
     clear
     cd ~/uvc
-    unset pilihan
-    unset exp
-    unset exp2
-    unset exp3
-    unset waktuMulai
-    unset waktuSelesai
-    unset namaFileInput
-    unset namaFileOutput
-    unset namaFolder
-    echo "Script berhasil diclose"
+    unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
+    echo "Script berhasil diclose!"
     exit
     ;;
   *)
