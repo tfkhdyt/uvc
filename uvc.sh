@@ -11,11 +11,8 @@ size(){
   sizeOutputFinal=$(echo $sizeOutputMB | bc -l)
   sizeOutputLast=$(echo "$sizeOutputFinal MB")
 
-  persentase="scale=1; 100-${sizeOutputFinal}/${sizeInputFinal}*100"
-  echo "[Original]   = $sizeInputLast"
-  echo "[Compressed] = $sizeOutputLast"
-  persentase2=$(echo $persentase | bc -l)
-  echo "Video Anda telah berkurang ${persentase2}%"
+  echo "\n  [Original]   = $sizeInputLast"
+  echo "  [Compressed] = $sizeOutputLast"
 }
 
 logo(){
@@ -76,7 +73,7 @@ proses(){
                 sleep 3
                 ffmpeg -i "$namaFileInput" -c:v libx265 -crf 27 -preset faster -c:a copy "$namaFileOutput"
                 clear
-                echo "Proses convert telah selesai"
+                echo "Proses convert telah selesai!"
                 size
                 cd ~
                 unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
@@ -118,7 +115,7 @@ proses(){
                     # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset faster -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
-                    echo "Proses convert telah selesai"
+                    echo "Proses convert telah selesai!"
                     size
                     cd ~
                     unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
