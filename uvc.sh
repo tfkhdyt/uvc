@@ -71,7 +71,7 @@ proses(){
                 echo "Proses convert akan segera dimulai..."
                 echo "Tekan q untuk membatalkan proses convert"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 27 -preset faster -c:a copy "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 25 -preset veryfast -c:a copy "$namaFileOutput"
                 clear
                 echo "Proses convert telah selesai!"
                 size
@@ -110,9 +110,9 @@ proses(){
                     echo "Proses convert akan segera dimulai..."
                     echo "Tekan q untuk membatalkan proses convert"
                     sleep 3
-                    # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset faster -c:a copy "$namaFileOutput"
-                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 27 -preset faster -c:a copy "$namaFileOutput"
-                    # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset faster -c:a copy "$namaFileOutput"
+                    # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
+                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 25 -preset veryfast -c:a copy "$namaFileOutput"
+                    # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
                     echo "Proses convert telah selesai!"
