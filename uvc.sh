@@ -1,5 +1,15 @@
 #!/bin/bash
 # developed by tfkhdyt
+color(){
+  R='\033[0;31m'
+  NC='\033[0m' # No Color
+  LG='\033[1;32m'
+  Y='\033[1;33m'
+  LB='\033[1;34m'
+  G='\033[0;32m'
+  B='\033[0;34m'
+}
+color
 size(){
   sizeInput=$(ffprobe -i "$namaFileInput" -show_entries format=size -v quiet -of csv="p=0")
   sizeInputMB="scale=2; $sizeInput / 1048576"
@@ -11,8 +21,8 @@ size(){
   sizeOutputFinal=$(echo $sizeOutputMB | bc -l)
   sizeOutputLast=$(echo "$sizeOutputFinal MB")
 
-  echo "\n  [Original]   = $sizeInputLast"
-  echo "  [Compressed] = $sizeOutputLast"
+  echo "\n  ${NC}[Original]   = ${LB}$sizeInputLast"
+  echo "  ${NC}[Compressed] = ${G}$sizeOutputLast"
 }
 
 logo(){
@@ -28,23 +38,23 @@ proses(){
           toilet -f smslant -F border "Pilih video" | lolcat
           pwd -P
           tree -L 1 -h -F
-          echo "\n    [1] = Buka folder"
-          echo "    [2] = Pilih file"
-          echo "    [3] = Kembali ke menu utama\n"
-          printf "  Pilih: "
+          echo "\n    [${LG}1${NC}] = Buka folder"
+          echo "    [${LB}2${NC}] = Pilih file"
+          echo "    [${R}3${NC}] = Kembali ke menu utama\n"
+          printf "  Pilih: ${B}"
           read exp
           if [ $exp -eq 1 ]; then
-            echo "\n  * Tanpa tanda petik"
-            echo "  .. untuk keluar folder"
-            printf "\n  Nama folder: "
+            echo "\n  ${Y}* Tanpa tanda petik"
+            echo "  ${Y}.. untuk keluar folder"
+            printf "\n  ${NC}Nama folder: ${B}"
             read namaFolder
             cd "$namaFolder"
             clear
           elif [ $exp -eq 2 ]; then
-            echo "\n  * Tanpa tanda petik"
-            printf "  Nama file          : "
+            echo "\n  ${Y}* Tanpa tanda petik"
+            printf "  ${NC}Nama file          : ${B}"
             read namaFileInput
-            printf "  Simpan dengan nama : "
+            printf "  ${NC}Simpan dengan nama : ${B}"
             read namaFileOutput
             clear
             konfirmasi(){
@@ -52,32 +62,32 @@ proses(){
               ptInput="$namaFileInput"
               ptOutput="$namaFileOutput"
               durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
-              echo "  Input  : $ptInput"
-              echo "  Output : $ptOutput"
-              echo "  Durasi : $durasi"
+              echo "  ${NC}Input  : ${LB}$ptInput"
+              echo "  ${NC}Output : ${LB}$ptOutput"
+              echo "  ${NC}Durasi : ${LB}$durasi"
               sizeInput=$(ffprobe -i "$namaFileInput" -show_entries format=size -v quiet -of csv="p=0")
               sizeInputMB="scale=2; $sizeInput / 1048576"
               sizeInputFinal=$(echo $sizeInputMB | bc -l) 
               sizeInputLast=$(echo "$sizeInputFinal MB")
-              echo "  Ukuran : ${sizeInputLast}\n"
-              echo "  Apakah anda ingin memotong/trim videonya?"
-              echo "    [1] = Iya, trim video terlebih dahulu"
-              echo "    [2] = Tidak, langsung convert saja"
-              echo "    [3] = Batal"
-              printf "\n  Pilih : "
+              echo "  ${NC}Ukuran : ${LB}${sizeInputLast}\n"
+              echo "  ${NC}Apakah anda ingin memotong/trim videonya?"
+              echo "    [${LG}1${NC}] = Iya, trim video terlebih dahulu"
+              echo "    [${LB}2${NC}] = Tidak, langsung convert saja"
+              echo "    [${R}3${NC}] = Batal"
+              printf "\n  Pilih : ${B}"
               read exp2
               if [ $exp2 -eq 2 ]; then
                 clear
-                echo "Proses convert akan segera dimulai..."
-                echo "Tekan q untuk membatalkan proses convert"
+                echo "${NC}Proses convert akan segera dimulai..."
+                echo "${Y}Tekan q untuk membatalkan proses convert${NC}"
                 sleep 3
                 ffmpeg -i "$namaFileInput" -c:v libx265 -crf 25 -preset veryfast -c:a copy "$namaFileOutput"
                 clear
-                echo "Proses convert telah selesai!"
+                echo "${G}Proses convert telah selesai!"
                 size
                 cd ~
                 unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
-                
+
                 exit
               elif [ $exp2 -eq 3 ]; then
                 clear
@@ -90,32 +100,32 @@ proses(){
                   ptInput="$namaFileInput"
                   ptOutput="$namaFileOutput"
                   # durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
-                  echo "  Input  : $ptInput"
-                  echo "  Output : $ptOutput"
-                  echo "  Durasi : $durasi\n"
-                  echo "  Isi dengan format 'jam:menit:detik'"
-                  echo "  Contoh : 00:01:25\n"
-                  printf "  Waktu mulai video   : "
+                  echo "  ${NC}Input  : ${LB}$ptInput"
+                  echo "  ${NC}Output : ${LB}$ptOutput"
+                  echo "  ${NC}Durasi : ${LB}$durasi\n"
+                  echo "  ${NC}Isi dengan format '${Y}jam:menit:detik${NC}'"
+                  echo "  Contoh : ${Y}00:01:25\n"
+                  printf "  ${NC}Waktu mulai video   : ${B}"
                   read waktuMulai
                   waktuMulaiSec=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
                   waktuMulaiSec2=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 - 1 }')
-                  printf "  Waktu selesai video : "
+                  printf "  ${NC}Waktu selesai video : ${B}"
                   read waktuSelesai
                   waktuSelesaiSec=$(echo $waktuSelesai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
                   akhir=$(expr $waktuSelesaiSec - $waktuMulaiSec)
-                  printf "\n  Mulai convert? (y/n) : "
+                  printf "\n  ${NC}Mulai convert? (${G}y${NC}/${R}n${NC}) : "
                   read exp3
                   if [ "$exp3" = "y" ]; then
                     clear
-                    echo "Proses convert akan segera dimulai..."
-                    echo "Tekan q untuk membatalkan proses convert"
+                    echo "${NC}Proses convert akan segera dimulai..."
+                    echo "${Y}Tekan q untuk membatalkan proses convert${NC}"
                     sleep 3
                     # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
                     ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 25 -preset veryfast -c:a copy "$namaFileOutput"
                     # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
-                    echo "Proses convert telah selesai!"
+                    echo "${G}Proses convert telah selesai!"
                     size
                     cd ~
                     unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
@@ -123,14 +133,14 @@ proses(){
                   elif [ "$exp3" = "n" ]; then
                     clear
                     konfirmasi
-                    echo "Input tidak valid"
+                    echo "${R}Input tidak valid"
                     trim
                   fi
                 }
               trim
             else
               clear
-              echo "Input tidak valid"
+              echo "${R}Input tidak valid"
               konfirmasi
               fi
             }
@@ -142,7 +152,7 @@ proses(){
           menu
         else
           clear
-          echo "Input tidak valid"
+          echo "${R}Input tidak valid"
           fi
         }
       browse
@@ -152,13 +162,13 @@ proses(){
     clear
     cd ~/uvc
     unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
-    echo "Script berhasil diclose!"
+    echo "${G}Script berhasil diclose!"
     exit
     ;;
   *)
     cd ~/uvc
     clear
-    echo "Input tidak valid!"
+    echo "${R}Input tidak valid!"
     menu
     ;;
 esac
@@ -166,9 +176,9 @@ esac
 menu(){
   logo
   printf "  Menu: \n"
-  printf "    [1] = Pilih video\n"
-  printf "    [2] = Keluar\n\n"
-  printf "  Pilih: "
+  printf "    [${LG}1${NC}] = Pilih video\n"
+  printf "    [${R}2${NC}] = Keluar\n\n"
+  printf "  Pilih: ${B}"
   read pilihan
   proses
 }
