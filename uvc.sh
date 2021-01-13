@@ -163,6 +163,8 @@ proses(){
     cd ~/uvc
     unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
     echo "${G}Script berhasil diclose!"
+    sleep 2
+    clear
     exit
     ;;
   *)
