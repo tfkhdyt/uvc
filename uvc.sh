@@ -27,7 +27,7 @@ proses(){
         browse(){
           toilet -f smslant -F border "Pilih video" | lolcat
           pwd -P
-          tree -L 1 -h
+          tree -L 1 -h -F
           echo "\n    [1] = Buka folder"
           echo "    [2] = Pilih file"
           echo "    [3] = Kembali ke menu utama\n"
@@ -61,9 +61,9 @@ proses(){
               sizeInputLast=$(echo "$sizeInputFinal MB")
               echo "  Ukuran : ${sizeInputLast}\n"
               echo "  Apakah anda ingin memotong/trim videonya?"
-              echo "    [1] Iya, trim video terlebih dahulu"
-              echo "    [2] Tidak, langsung convert saja"
-              echo "    [3] Batal"
+              echo "    [1] = Iya, trim video terlebih dahulu"
+              echo "    [2] = Tidak, langsung convert saja"
+              echo "    [3] = Batal"
               printf "\n  Pilih : "
               read exp2
               if [ $exp2 -eq 2 ]; then
