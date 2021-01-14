@@ -38,8 +38,10 @@ cd uvc
 # mulai script dengan mengetik command berikut
 uvc
 
-# cara force stop proses convert yaitu dengan tekan tombol ctrl + c
+# cara force stop script ini yaitu dengan tekan tombol ctrl + c
 ```
+Atau apabila Anda tetap kesusahan dengan step di atas, Anda bisa menonton video di tutorialnya di bawah ini
+[![Tonton video](https://i.postimg.cc/9Q9J94G9/0001-15359273786-20210110-174645-0000.png)](https://youtu.be/TSUz2b3ZgIw)
 
 ## Uninstall
 ##### Cara baru
