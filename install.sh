@@ -1,7 +1,7 @@
 #!/bin/bash
 
 clear
-pkg install ffmpeg figlet ruby toilet tree
+pkg install ffmpeg figlet ruby toilet tree bc
 gem install lolcat
 echo "alias uvc='cd ~/uvc && sh uvc.sh'" >> ~/.zshrc
 echo "alias uvc='cd ~/uvc && sh uvc.sh'" >> ~/../usr/etc/bash.bashrc

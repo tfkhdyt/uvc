@@ -26,7 +26,7 @@ size(){
 }
 
 logo(){
-  toilet -f smslant -F border -w 48 "Ultra Video Converter" | lolcat
+  toilet -f smslant -F border -w 48 "Ultra Video Converter" | lolcat -a -s 1600
 }
 proses(){
   clear
@@ -35,7 +35,7 @@ proses(){
       cd ../storage/shared
       while [ -z "$namaFileInput" ]; do
         browse(){
-          toilet -f smslant -F border "Pilih video" | lolcat
+          toilet -f smslant -F border "Pilih video" | lolcat -a -s 1600
           pwd -P
           tree -L 1 -h -F
           echo "\n    [${LG}1${NC}] = Buka folder"
@@ -58,7 +58,7 @@ proses(){
             read namaFileOutput
             clear
             konfirmasi(){
-              toilet -f smslant -F border "Konfirmasi" | lolcat
+              toilet -f smslant -F border "Konfirmasi" | lolcat -a -s 1600
               ptInput="$namaFileInput"
               ptOutput="$namaFileOutput"
               durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
@@ -96,7 +96,7 @@ proses(){
               elif [ $exp2 -eq 1 ]; then
                 clear
                 trim(){
-                  toilet -f smslant -F border "Trim" | lolcat
+                  toilet -f smslant -F border "Trim" | lolcat -a -s 1600
                   ptInput="$namaFileInput"
                   ptOutput="$namaFileOutput"
                   # durasi=$(ffprobe -i "$namaFileInput" -show_entries format=duration -v quiet -of csv='p=0' -sexagesimal | sed -E 's/(:[0-9]+)\.[0-9]+/\1/g')
@@ -163,7 +163,7 @@ proses(){
     cd ~/uvc
     unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
     echo "${G}Script berhasil diclose!"
-    sleep 2
+    sleep 1
     clear
     exit
     ;;
