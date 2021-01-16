@@ -109,7 +109,7 @@ proses(){
                   read waktuMulai
                   waktuMulaiSec=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
                   waktuMulaiSec2=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 - 1 }')
-                  printf "  ${NC}Waktu selesai video : ${B}"
+                  printf "   ${NC}Waktu selesai video : ${B}"
                   read waktuSelesai
                   waktuSelesaiSec=$(echo $waktuSelesai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
                   akhir=$(expr $waktuSelesaiSec - $waktuMulaiSec)
