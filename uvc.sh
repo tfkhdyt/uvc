@@ -81,7 +81,7 @@ proses(){
                 echo "${NC}Proses convert akan segera dimulai..."
                 echo "${Y}Tekan q untuk membatalkan proses convert${NC}"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx265 -crf 25 -preset veryfast -c:a copy "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx264 -crf 23 -preset medium -c:a copy "$namaFileOutput"
                 clear
                 echo "${G}Proses convert telah selesai!"
                 size
@@ -104,7 +104,7 @@ proses(){
                   echo "   ${NC}Output : ${LB}$ptOutput"
                   echo "   ${NC}Durasi : ${LB}$durasi\n"
                   echo "   ${NC}Isi dengan format '${Y}jam:menit:detik${NC}'"
-                  echo "   Contoh : ${Y}00:01:25\n"
+                  echo "   Contoh : ${Y}00:01:23\n"
                   printf "   ${NC}Waktu mulai video   : ${B}" 
                   read waktuMulai
                   waktuMulaiSec=$(echo $waktuMulai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
@@ -120,9 +120,9 @@ proses(){
                     echo "${NC}Proses convert akan segera dimulai..."
                     echo "${Y}Tekan q untuk membatalkan proses convert${NC}"
                     sleep 3
-                    # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
-                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx265 -crf 25 -preset veryfast -c:a copy "$namaFileOutput"
-                    # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
+                    # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx264 -crf 22 -preset medium -c:a copy "$namaFileOutput"
+                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx264 -crf 23 -preset medium -c:a copy "$namaFileOutput"
+                    # ffmpeg -i temp.mp4 -c:v libx264 -crf 22 -preset medium -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
                     echo "${G}Proses convert telah selesai!"
