@@ -11,3 +11,4 @@ cd ~/uvc
 echo "Update berhasil!"
 sleep 3
 ./uvc.sh
+$SHELL
