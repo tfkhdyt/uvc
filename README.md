@@ -27,13 +27,7 @@ termux-setup-storage
 # kemudian pilih y
 
 # cloning source code
-git clone https://github.com/tfkhdyt/uvc.git
-
-# buka folder uvc
-cd uvc
-
-# jalankan installer
-./install.sh
+git clone https://github.com/tfkhdyt/uvc.git && cd uvc && ./install.sh
 
 # mulai script dengan mengetik command berikut
 uvc
