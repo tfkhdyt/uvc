@@ -1,4 +1,4 @@
-# Ultra Video Converter
+# Ultra Video Compressor
 Skrip untuk mengompres video dengan mudah menggunakan Termux.
 Dengan skrip ini, dapat membuat size videomu berkurang sampai ±50% tanpa mengurangi kualitas video.
 Skrip ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis command yang panjang.
@@ -13,12 +13,12 @@ Skrip ini memudahkan kalian untuk menjalankan command ffmpeg tanpa harus menulis
 </p>
 
 ## Disclaimer
-Saya tidak menjamin video yang kalian convert ukurannya akan menjadi lebih kecil, karena hasil akhir akan sangat berpengaruh dari video asli. Jadi jangan heran jika suatu saat size hasil convert malah lebih besar dari size video asli 
+Saya tidak menjamin video yang kalian kompres ukurannya akan menjadi lebih kecil, karena hasil akhir akan sangat berpengaruh dari video asli. Jadi jangan heran jika suatu saat size hasil kompres malah lebih besar dari size video asli 
 
 ## Requirements
 - `Termux`
 - `git (pkg install git)`
-- `Koneksi internet (Hanya untuk instalasi dependencies, proses convert tetap dilakukan secara offline)`
+- `Koneksi internet (Hanya untuk instalasi dependencies, proses kompres tetap dilakukan secara offline)`
 
 ## Instalasi
 ```Shell

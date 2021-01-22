@@ -26,7 +26,7 @@ size(){
 }
 
 logo(){
-  figlet -f standard -w $(tput cols) -c "Ultra Video Converter" | lolcat -a -s 1600
+  figlet -f small -w $(tput cols) -c "Ultra Video Compressor" | lolcat -a -s 1600
 }
 proses(){
   clear
@@ -39,8 +39,8 @@ proses(){
           pwd -P
           tree -L 1 -h -F
           echo "\n     [${LG}1${NC}] = Buka folder"
-          echo "     [${LB}2${NC}] = Pilih file"
-          echo "     [${R}3${NC}] = Kembali ke menu utama\n"
+          echo "     [${LG}2${NC}] = Pilih file"
+          echo "     [${LG}3${NC}] = Kembali ke menu utama\n"
           printf "   Pilih: ${B}"
           read exp
           if [ $exp -eq 1 ]; then
@@ -72,18 +72,18 @@ proses(){
               echo "   ${NC}Ukuran : ${LB}${sizeInputLast}\n"
               echo "   ${NC}Apakah anda ingin memotong/trim videonya?"
               echo "     [${LG}1${NC}] = Iya, trim video terlebih dahulu"
-              echo "     [${LB}2${NC}] = Tidak, langsung convert saja"
-              echo "     [${R}3${NC}] = Batal"
+              echo "     [${LG}2${NC}] = Tidak, langsung kompres saja"
+              echo "     [${LG}3${NC}] = Batal"
               printf "\n   Pilih : ${B}"
               read exp2
               if [ $exp2 -eq 2 ]; then
                 clear
-                echo "${NC}Proses convert akan segera dimulai..."
-                echo "${Y}Tekan q untuk membatalkan proses convert${NC}"
+                echo "${NC}Proses kompres akan segera dimulai..."
+                echo "${Y}Tekan q untuk membatalkan proses kompres${NC}"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Converter" "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
                 clear
-                echo "${G}Proses convert telah selesai!"
+                echo "${G}Proses kompres telah selesai!"
                 size
                 cd ~
                 unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
@@ -113,19 +113,19 @@ proses(){
                   read waktuSelesai
                   waktuSelesaiSec=$(echo $waktuSelesai | awk -F: '{ print ($1 * 3600) + ($2 * 60) + $3 }')
                   akhir=$(expr $waktuSelesaiSec - $waktuMulaiSec)
-                  printf "\n   ${NC}Mulai convert? (${G}y${NC}/${R}n${NC}) : "
+                  printf "\n   ${NC}Mulai kompres? (${G}y${NC}/${R}n${NC}) : "
                   read exp3
                   if [ "$exp3" = "y" ]; then
                     clear
-                    echo "${NC}Proses convert akan segera dimulai..."
-                    echo "${Y}Tekan q untuk membatalkan proses convert${NC}"
+                    echo "${NC}Proses kompres akan segera dimulai..."
+                    echo "${Y}Tekan q untuk membatalkan proses kompres${NC}"
                     sleep 3
                     # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
-                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Converter" "$namaFileOutput"
+                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
                     # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
-                    echo "${G}Proses convert telah selesai!"
+                    echo "${G}Proses kompres telah selesai!"
                     size
                     cd ~
                     unset pilihan exp exp2 exp3 waktuMulai waktuSelesai namaFileInput namaFileOutput namaFolder sizeInput sizeOutput sizeInputMB sizeOutputMB sizeInputLast sizeOutputLast sizeOutputFinal sizeInputFinal
@@ -167,6 +167,11 @@ proses(){
     clear
     exit
     ;;
+  3)
+    clear
+    printf "${NC}"
+    ./update.sh
+    ;;
   *)
     cd ~/uvc
     clear
@@ -177,9 +182,17 @@ esac
 }
 menu(){
   logo
+  printf "\n   Author    : ${LB}Taufik Hidayat${NC}\n"
+  printf "   GitHub    : ${LB}https://github.com/tfkhdyt${NC}\n"
+  printf "   Facebook  : ${LB}https://facebook.com/tfkhdyt142${NC}\n"
+  printf "   Instagram : ${LB}https://instagram.com/_tfkhdyt_${NC}\n"
+  printf "   Twitter   : ${LB}https://twitter.com/tfkhdyt${NC}\n"
+  printf "   Youtube   : ${LB}https://youtu.be/tfkhdyt${NC}\n"
+  printf "   Telegram  : ${LB}https://t.me/tfkhdyt${NC}\n\n"
   printf "   Menu: \n"
   printf "     [${LG}1${NC}] = Pilih video\n"
-  printf "     [${R}2${NC}] = Keluar\n\n"
+  printf "     [${LG}2${NC}] = Keluar\n"
+  printf "     [${LG}3${NC}] = Update\n\n"
   printf "   Pilih: ${B}"
   read pilihan
   proses
