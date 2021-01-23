@@ -83,6 +83,7 @@ proses(){
                 sleep 3
                 ffmpeg -i "$namaFileInput" -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
                 clear
+                figlet -f standard -w $(tput cols) -c "Selesai" | lolcat
                 echo "${G}Proses kompres telah selesai!"
                 size
                 cd ~
@@ -125,6 +126,7 @@ proses(){
                     # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
+                    figlet -f standard -w $(tput cols    ) -c "Selesai" | lolcat
                     echo "${G}Proses kompres telah selesai!"
                     size
                     cd ~
