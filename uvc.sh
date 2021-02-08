@@ -81,7 +81,7 @@ proses(){
                 echo "${NC}Proses kompres akan segera dimulai..."
                 echo "${Y}Tekan q untuk membatalkan proses kompres${NC}"
                 sleep 3
-                ffmpeg -i "$namaFileInput" -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
+                ffmpeg -i "$namaFileInput" -c:v libx264 -crf 23 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
                 clear
                 figlet -f standard -w $(tput cols) -c "Selesai" | lolcat
                 echo "\n${G}Proses kompres telah selesai!"
@@ -122,7 +122,7 @@ proses(){
                     echo "${Y}Tekan q untuk membatalkan proses kompres${NC}"
                     sleep 3
                     # ffmpeg -i "$namaFileInput" -ss "$waktuMulai" -to "$waktuSelesai" -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
-                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx264 -crf 20 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
+                    ffmpeg -ss $waktuMulaiSec2 -i "$namaFileInput" -ss 1 -t $akhir -c:v libx264 -crf 23 -preset veryfast -c:a copy -metadata title="Compressed by Ultra Video Compressor" "$namaFileOutput"
                     # ffmpeg -i temp.mp4 -c:v libx265 -crf 22 -preset veryfast -c:a copy "$namaFileOutput"
                     # rm temp.mp4
                     clear
